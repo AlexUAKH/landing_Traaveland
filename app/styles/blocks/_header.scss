@@ -1,0 +1,50 @@
+.header {
+  display: flex;
+}
+
+.header__burger {
+  cursor: pointer;
+  margin-right: 10px;
+  display: flex;
+  width: 30px;
+  height: 20px;
+  position: relative;
+  & span {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    top: 9px;
+    transition: 0.3s;
+  }
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    transition: 0.3s;
+  }
+  &::after {
+    bottom: 0;
+  }
+  &::before {
+    top: 0;
+  }
+}
+
+.header__burger.active {
+  & span {
+    transform: scale(0);
+  }
+  &::after {
+    bottom: 9px;
+    transform: rotate(-45deg);
+  }
+  &::before {
+    top: 9px;
+    transform: rotate(45deg);
+  }
+}

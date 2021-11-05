@@ -1,0 +1,32 @@
+// GENERAL PROJECT STYLES
+a {
+  color: inherit;
+  text-decoration: none;
+  display: inline-block;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+.wraper {
+  min-height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.__container {
+  max-width: $container-width; //1292px;
+  margin: 0 auto;
+  padding: 0 16px;
+  // box-sizing: content-box;
+}
+
+.header {
+}
+.page {
+  flex: 1 1 auto;
+}
+.footer {
+}
