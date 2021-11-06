@@ -1,15 +1,3 @@
-// GENERAL PROJECT STYLES
-a {
-  color: inherit;
-  text-decoration: none;
-  display: inline-block;
-}
-
-ul {
-  padding: 0;
-  margin: 0;
-}
-
 .wraper {
   min-height: 100%;
   overflow: hidden;
@@ -17,10 +5,9 @@ ul {
   flex-direction: column;
 }
 .__container {
-  max-width: $container-width; //1292px;
+  max-width: $container-width;
   margin: 0 auto;
   padding: 0 16px;
-  // box-sizing: content-box;
 }
 
 .header {
@@ -29,4 +16,23 @@ ul {
   flex: 1 1 auto;
 }
 .footer {
+}
+
+.ibg {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+.ibg img {
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.btn {
 }

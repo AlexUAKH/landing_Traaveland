@@ -1,4 +1,3 @@
-const preprocessor = "sass";
 const fileswatch = "html,htm,txt,json,md,woff2"; // List of files extensions for watching & hard reload
 
 const source_folder = "app";
@@ -16,7 +15,7 @@ const path = {
     html: [source_folder + "/*.html", "!" + source_folder + "/_*.html"],
     css: [source_folder + "/styles/*.*", "!" + source_folder + "/styles/_*.*"], //source_folder + "/scss/style.scss",
     js: [source_folder + "/js/*.js", "!" + source_folder + "/js/*.min.js"], // source_folder + "/js/script.js",
-    img: [source_folder + "/images/src/**/*"], //source_folder + "/img/**/*.{jpg,png,svg,gif,ico,webp}",//
+    img: [source_folder + "/img/src/**/*"], //source_folder + "/img/**/*.{jpg,png,svg,gif,ico,webp}",//
     fonts: source_folder + "/fonts/*.ttf"
   },
   watch: {
@@ -140,6 +139,7 @@ function styles() {
         })
       ])
     )
+    .pipe(group_css_media())
     .pipe(dest(source_folder + "/css/"))
     .pipe(clean_css())
     .pipe(
@@ -169,7 +169,7 @@ function styles() {
 
 function images() {
   return src(path.src.img)
-    .pipe(changed("app/images/dist"))
+    .pipe(changed("app/img/dist"))
     .pipe(
       imagemin({
         progressive: true,
@@ -178,7 +178,7 @@ function images() {
         optimizationLevel: 3 // 0 to 7
       })
     )
-    .pipe(dest(source_folder + "/images/dist"))
+    .pipe(dest(source_folder + "/img/dist"))
     .pipe(browserSync.stream());
 }
 

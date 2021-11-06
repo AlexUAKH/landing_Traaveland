@@ -1,5 +1,38 @@
 .header {
   display: flex;
+
+  // .header__container
+  &__container {
+    height: 70px;
+    @media (max-) {
+    }
+  }
+
+  // .header__logo
+  &__logo {
+  }
+
+  // .header__menu
+  &__menu {
+  }
+
+  // .header__btn
+  &__btn {
+  }
+}
+
+.main-menu {
+  // .main-menu__list
+  &__list {
+  }
+
+  // .main-menu__item
+  &__item {
+  }
+
+  // .main-menu__link
+  &__link {
+  }
 }
 
 .header__burger {

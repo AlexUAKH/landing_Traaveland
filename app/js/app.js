@@ -3,5 +3,15 @@
 
 document.addEventListener("DOMContentLoaded", () => {
   // Custom JS
-  alert("cool!!");
+  ibg();
 });
+
+function ibg() {
+  const ibg = document.querySelectorAll(".ibg");
+  for (let i = 0; i < ibg.length; i++) {
+    let img = ibg[i].querySelector("img");
+    if (img) {
+      ibg[i].style.backgroundimage = "url(" + img.getAttribute("src") + ")";
+    }
+  }
+}

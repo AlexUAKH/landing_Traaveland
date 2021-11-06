@@ -1,42 +1,27 @@
 // USER VARIABLES SECTION
 
-$accent: #b00000; // Accent Color
-$fontsize: 16px; // Body Font Size
+$accent: #c9453b; // Accent Color
+$backgroundcolor: #fff;
+$fontsize: 18px; // Body Font Size
+$fontweight: 400;
 $textcolor: #000; // Text Color
+$link-color: #fff;
+$link-decoration: none;
 $lineheight: 2; // Document Line Height
-$userfont: "Inter", sans-serif; // User Font Family
+$textalign: none;
+$userfont: "Roboto", sans-serif; // User Font Family
 $systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif; // System Font Family
 
-$container-width: 1322px;
+$container-width: 1172px;
 
-// IMPORT SECTION
-
-@import "../../node_modules/bootstrap/dist/css/bootstrap-reboot.css"; // Bootstrap Reboot collection
-// @import (less) 'node_modules/bootstrap/dist/css/bootstrap-grid.css'; // Optional Bootstrap Grid
-
-// FONTS LOAD SECTION
-
-//only english  &display=swap
-//with cyrilic &display=swap&subset=cyrillic-ext
-
-@import url(https://fonts.googleapis.com/css?family=Inter:regular,500,600,700,800&display=swap&subset=cyrillic-ext);
-@import url(https://fonts.googleapis.com/css?family=Poppins:300,regular,500,600,700,800&display=swap&subset=cyrillic-ext);
-
-// .font(@fname, @fstyle, @fweight, @furl) {
-// 	@font-face {
-// 		font-family: @fname;
-// 		font-style: @fstyle;
-// 		font-weight: @fweight;
-// 		src: url(@furl) format('woff2');
-// 	}
-// }
-
-// .font('roboto-oh5', normal, 400, '../fonts/roboto-regular-webfont.woff2');
-// .font('roboto-oh5', italic, 400, '../fonts/roboto-italic-webfont.woff2');
-// .font('roboto-oh5', normal, 700, '../fonts/roboto-bold-webfont.woff2');
-// .font('roboto-oh5', italic, 700, '../fonts/roboto-bolditalic-webfont.woff2');
+// @import url('https://fonts.googleapis.com/css2?family=Gelasio:wght@500;700&family=Ribeye&family=Roboto:wght@400;500&display=swap');
 
 // GENERAL CSS SETTINGS
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
 ::placeholder {
   color: #666;
@@ -67,10 +52,99 @@ body {
 }
 
 body {
+  margin: 0; // 1
   font-family: $userfont;
   font-size: $fontsize;
+  font-weight: $fontweight;
   line-height: $lineheight;
   color: $textcolor;
+  text-align: $textalign;
+  background-color: $backgroundcolor;
   min-width: 320px;
   overflow-x: hidden;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+a {
+  color: $link-color;
+  text-decoration: $link-decoration;
+  display: inline-block;
+  &:hover {
+    color: $link-color;
+    text-decoration: $link-decoration;
+  }
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+a:not([href]):not([class]) {
+  &,
+  &:hover {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+img,
+svg {
+  vertical-align: middle;
+}
+
+button:focus:not(:focus-visible) {
+  outline: 0;
+}
+
+input,
+button,
+select,
+optgroup,
+textarea {
+  margin: 0; // 1
+  font-family: inherit;
+  line-height: inherit;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+[role="button"] {
+  cursor: pointer;
+}
+
+textarea {
+  resize: vertical; // 1
+}
+
+[hidden] {
+  display: none !important;
+}
+
+// scss-docs-start color-functions
+// Tint a color: mix a color with white
+@function tint-color($color, $weight) {
+  @return mix(white, $color, $weight);
+}
+
+// Shade a color: mix a color with black
+@function shade-color($color, $weight) {
+  @return mix(black, $color, $weight);
+}
+
+// Shade the color if the weight is positive, else tint it
+@function shift-color($color, $weight) {
+  @return if(
+    $weight > 0,
+    shade-color($color, $weight),
+    tint-color($color, -$weight)
+  );
 }
