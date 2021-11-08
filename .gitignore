@@ -6,3 +6,7 @@ dist
 /**/*.DS_Store
 /**/package-lock.json
 /**/debug.log
+misc.xml
+modules.xml
+Traveland.iml
+vcs.xml
