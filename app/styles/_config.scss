@@ -11,6 +11,7 @@ $lineheight: 2; // Document Line Height
 $textalign: none;
 $userfont: "Roboto", sans-serif; // User Font Family
 $systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif; // System Font Family
+$mobilebreakpoint: 768px;
 
 $container-width: 1172px;
 
@@ -60,8 +61,11 @@ body {
   color: $textcolor;
   text-align: $textalign;
   background-color: $backgroundcolor;
-  min-width: 320px;
+  min-width: 300px;
   overflow-x: hidden;
+}
+body.locked {
+  overflow: hidden;
 }
 
 p {

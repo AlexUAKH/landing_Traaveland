@@ -3,6 +3,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 .__container {
   max-width: $container-width;
@@ -11,20 +12,43 @@
 }
 
 .header {
+  background: transparent;
+  // background: dimgrey;
+  position: absolute;
+  padding-top: 25px;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  @media (max-width: $mobilebreakpoint) {
+    position: fixed;
+    padding-top: 0px;
+  }
 }
 .page {
   flex: 1 1 auto;
+  @media (max-width: $mobilebreakpoint) {
+    //margin-top: 50px;
+  }
+
+  // .page__top-section
+  &__top-section {
+  }
+
+  // .page__locations
+  &__locations {
+  }
 }
+
 .footer {
 }
 
-.ibg {
+.bimg {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
 }
-.ibg img {
+.bimg img {
   width: 0;
   height: 0;
   position: absolute;
@@ -35,4 +59,42 @@
 }
 
 .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #c9453b;
+  border-radius: 5px;
+  & a {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 150%;
+    color: #ffffff;
+    padding: 10px 35px;
+  }
+}
+
+.topic {
+  margin-top: 140px;
+  text-align: center;
+  &__title {
+    font-family: Gelasio;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 43px;
+    line-height: 140%;
+    color: #000000;
+    margin-bottom: 20px;
+  }
+  &__text {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 160%;
+    color: #000000;
+    opacity: 0.6;
+    margin: 0 auto;
+  }
 }
