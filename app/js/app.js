@@ -1,3 +1,8 @@
+import Swiper, { Navigation, Scrollbar, Keyboard } from "swiper";
+
+// configure Swiper to use modules
+Swiper.use([Navigation, Scrollbar, Keyboard]);
+
 document.addEventListener("DOMContentLoaded", () => {
   // Custom JS
   bimg();
@@ -8,6 +13,47 @@ document.addEventListener("DOMContentLoaded", () => {
   const mainMenu = document.getElementsByClassName("main-menu")[0];
   const mainMenuLinks = document.getElementsByClassName("main-menu__link");
   const locationsSection = document.getElementsByClassName("locations")[0];
+
+  // init Swiper:
+  const swiper = new Swiper(".offers__slider", {
+    loop: true,
+    slidesPerView: 1,
+    grabCursor: true,
+    draggable: true,
+    spaceBetween: 0,
+    // Navigation arrows
+    navigation: {
+      nextEl: ".slider-offers__button-next",
+      prevEl: ".slider-offers__button-prev"
+    },
+
+    // And if we need scrollbar
+    scrollbar: {
+      el: ".swiper-scrollbar",
+      draggable: true
+    },
+    keyboard: {
+      enabled: true
+    },
+    breakpoints: {
+      510: {
+        slidesPerView: 2,
+        spaceBetween: 20
+      },
+      769: {
+        slidesPerView: 3,
+        spaceBetween: 40
+      },
+      963: {
+        slidesPerView: 4,
+        spaceBetween: 50
+      },
+      1200: {
+        slidesPerView: 5,
+        spaceBetween: 70
+      }
+    }
+  });
 
   window.addEventListener("scroll", () => {
     console.log("y: ", locationsSection.getClientRects());
