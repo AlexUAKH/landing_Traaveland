@@ -86,11 +86,9 @@ a {
   color: #fff;
   text-decoration: none;
   display: inline-block;
-}
-
-a:hover {
-  color: #fff;
-  text-decoration: none;
+  -webkit-transition: opacity 0.35s;
+  -o-transition: opacity 0.35s;
+  transition: opacity 0.35s;
 }
 
 ul {
@@ -220,6 +218,9 @@ textarea {
   justify-content: center;
   background: #c9453b;
   border-radius: 5px;
+  -webkit-transition: opacity 0.35s;
+  -o-transition: opacity 0.35s;
+  transition: opacity 0.35s;
 }
 
 .btn a {
@@ -403,6 +404,7 @@ textarea {
   background: #c9453b;
   border-radius: 5px;
   border: 0;
+  cursor: pointer;
 }
 
 .header__container {
@@ -918,6 +920,10 @@ textarea {
 }
 
 @media (min-width: 768px) {
+  .btn:hover {
+    opacity: 0.6;
+  }
+
   .contacts__sotials-link:hover {
     opacity: 0.5;
   }
@@ -926,6 +932,10 @@ textarea {
     color: inherit;
     opacity: 0.6;
     text-decoration: underline;
+  }
+
+  .subscribe__btn:hover {
+    opacity: 0.6;
   }
 
   .header__menu {
@@ -996,6 +1006,11 @@ textarea {
 }
 
 @media (max-width: 768px) {
+  a:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+
   .header {
     position: fixed;
     padding-top: 0px;

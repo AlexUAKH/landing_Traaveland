@@ -205,9 +205,15 @@
     background: #c9453b;
     border-radius: 5px;
     border: 0;
+    cursor: pointer;
     @media (max-width: 680px) {
       width: 90%;
       margin-top: 20px;
+    }
+    @media (min-width: $mobilebreakpoint) {
+      &:hover {
+        opacity: 0.6;
+      }
     }
   }
 }

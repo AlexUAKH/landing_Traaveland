@@ -77,9 +77,12 @@ a {
   color: $link-color;
   text-decoration: $link-decoration;
   display: inline-block;
-  &:hover {
-    color: $link-color;
-    text-decoration: $link-decoration;
+  transition: opacity 0.35s;
+  @media (max-width: $mobilebreakpoint) {
+    &:hover {
+      color: $link-color;
+      text-decoration: $link-decoration;
+    }
   }
 }
 
