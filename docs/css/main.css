@@ -765,6 +765,7 @@ textarea {
 .slider-offers__button-next {
   width: 12px;
   height: 10px;
+  cursor: pointer;
 }
 
 .slider-offers__button-prev {
