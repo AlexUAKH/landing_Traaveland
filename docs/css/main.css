@@ -129,7 +129,7 @@ select {
   text-transform: none;
 }
 
-[role=button] {
+[role="button"] {
   cursor: pointer;
 }
 
@@ -524,7 +524,7 @@ textarea {
 
 .top-section {
   height: 900px;
-  background: url("../../img/dist/background_head.jpg") 50% 0 no-repeat;
+  background: url("../img/dist/background_head.jpg") 50% 0 no-repeat;
   position: relative;
 }
 
@@ -712,7 +712,7 @@ textarea {
   color: #000000;
   opacity: 0.6;
   padding-left: 20px;
-  background: url("../../img/dist/icon_location.svg") 0 50% no-repeat;
+  background: url("../img/dist/icon_location.svg") 0 50% no-repeat;
 }
 
 .slider-offers__slide-info-rate {
@@ -723,7 +723,7 @@ textarea {
   line-height: 150%;
   color: #000000;
   padding-left: 34px;
-  background: url("../../img/dist/icon_star.svg") 0 0 no-repeat;
+  background: url("../img/dist/icon_star.svg") 0 0 no-repeat;
 }
 
 .slider-offers__slide-duration {
@@ -766,11 +766,11 @@ textarea {
 }
 
 .slider-offers__button-prev {
-  background: url("../../img/dist/offers_left_arrows.svg");
+  background: url("../img/dist/offers_left_arrows.svg");
 }
 
 .slider-offers__button-next {
-  background: url("../../img/dist/offers_right_arrows.svg");
+  background: url("../img/dist/offers_right_arrows.svg");
 }
 
 .slider-offers__scrollbar {
